@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shunsuke otsuki</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: lowercase; /* decapitalizes all text */
+            background-color: black;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* centers vertically */
+            align-items: center;    /* centers horizontally */
+            height: 100%;
+            text-align: center;
+        }
+
+        .header, .content {
+            opacity: 0; /* initially hide the elements */
+            animation: fadeIn 1.5s ease-in forwards; /* apply fade-in animation */
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between; /* distributes space between Instagram and Twitter/Discord */
+            width: 100%;
+            max-width: 600px; /* restricts the width of the container */
+            padding: 0 90px; /* adds padding to the sides */
+            box-sizing: border-box; /* ensures padding does not affect width */
+            margin-bottom: -90px; /* adds space between icons and text */
+        }
+
+        .header .left, .header .right {
+            display: flex;
+            flex-direction: column; /* stacks discord above twitter */
+            align-items: center; /* aligns items to center */
+        }
+
+        .header img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px; /* adds space between discord and twitter */
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column; /* stack text vertically */
+            align-items: center; /* center text horizontally */
+            margin-top: 0; /* adjust this value to control the spacing between the icons and text */
+        }
+
+        h1 {
+            margin: 0;
+            color: white; /* changes text color to white */
+        }
+
+        div {
+            color: white; /* changes div text color to white */
+            font-size: smaller; /* makes the div text smaller */
+            margin-top: 5px; /* adjust this value to control the spacing between the h1 and div */
+        }
+
+        /* media query for mobile devices */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column; /* stacks icons vertically */
+                align-items: center; /* centers icons */
+            }
+
+            .header .left, .header .right {
+                flex-direction: row; /* aligns icons horizontally within each section */
+                margin-bottom: -50px; /* adds space between the left and right sections */
+            }
+
+            .header img {
+                margin-bottom: 0; /* removes extra space between icons */
+                margin-right: 50px; /* adds space between icons in each section */
+                margin-left: 50px
+            }
+
+            /* positioning for two icons above and two below the text */
+            .header .left {
+                order: -1; /* positions these icons above the text */
+                margin-bottom: 50px; /* space between top icons and text */
+            }
+
+            .header .right {
+                order: 1; /* positions these icons below the text */
+                margin-top: 60px; /* space between text and bottom icons */
+            }
+
+            .content {
+                order: 0; /* ensures the text remains in the middle */
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <div class="left">
+                <a href="https://www.instagram.com/supershunstagram">
+                    <img src="instagram.png" alt="instagram logo">
+                </a>
+                <a href="https://youtube.com/@shunsukeotsuki">
+                    <img src="youtube.png" alt="youtube logo">
+                </a>
+            </div>
+            <div class="right">
+                <a href="https://discord.com/users/1032150401220354098">
+                    <img src="discord.png" alt="discord logo">
+                </a>
+                <a href="https://twitter.com/supershuntweets">
+                    <img src="twitter.png" alt="twitter logo">
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <h1>shunsuke otsuki</h1>
+            <div>profile/html testing page</div>
+        </div>
+    </main>
+</body>
+</html>
